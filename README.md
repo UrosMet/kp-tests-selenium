@@ -1,4 +1,4 @@
-# KP QA Automation — Java + Selenium (JUnit 5)
+# KP QA Automation — Java + Selenium
 
 ## Prerequisites
 - Java 17+
@@ -12,9 +12,14 @@ mvn -q -DBASE_URL=https://www.kupujemprodajem.com test
 Specific tests:
 ```bash
 # Scenario 1
-mvn -q -DBASE_URL=https://www.kupujemprodajem.com -Dtest=SearchFiltersTest test
+mvn -q \
+  -DBASE_URL=https://www.kupujemprodajem.com \
+  -Dtest=SearchFiltersTest test
 # Scenario 2 (requires a public ad URL)
-mvn -q -DBASE_URL=https://www.kupujemprodajem.com -DKP_SAMPLE_AD_URL="https://www.kupujemprodajem.com/.../oglas/..." -Dtest=AdresarLoginTest test
+mvn -q \
+  -DBASE_URL=https://www.kupujemprodajem.com \
+  -DKP_SAMPLE_AD_URL="https://www.kupujemprodajem.com/.../oglas/..." \
+  -Dtest=AdresarLoginTest test
 ```
 
 ## Env/System properties
