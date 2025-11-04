@@ -24,6 +24,7 @@ public final class Helpers {
             .orElse("https://www.kupujemprodajem.com/");
 
 
+
     public static void waitForDomComplete(WebDriver driver, Duration timeout) {
         new WebDriverWait(driver, timeout).until(d ->
                 "complete".equals(((JavascriptExecutor) d).executeScript("return document.readyState")));
