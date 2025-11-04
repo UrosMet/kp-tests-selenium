@@ -297,7 +297,7 @@ public final class Helpers {
         pickConditionOption(driver, Pattern.compile("^Novo$", Pattern.CASE_INSENSITIVE));
 
         openConditionDropdown(driver);
-        pickConditionOption(driver, Pattern.compile("Nekorišćeno\\s*\\(polovno\\)|Nekorišćeno", Pattern.CASE_INSENSITIVE));
+        pickConditionOption(driver, Pattern.compile("(?i)nekori\\S+", Pattern.CASE_INSENSITIVE));
     }
 
     public static int submitSearchAndGetResultCount(WebDriver driver, String prevCrumb) {
