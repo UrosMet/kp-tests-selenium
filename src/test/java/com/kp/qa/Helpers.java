@@ -5,6 +5,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.*;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -44,6 +45,21 @@ public final class Helpers {
             } else {
                 throw e;
             }
+        }
+    }
+    public static void takeScreenshot(WebDriver driver, String name) {
+        try {
+            File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            String timestamp = new java.text.SimpleDateFormat("yyyyMMdd_HHmmss").format(new java.util.Date());
+            String filename = "screenshots/" + name + "_" + timestamp + ".png";
+
+            File dest = new File(filename);
+            dest.getParentFile().mkdirs();
+            org.openqa.selenium.io.FileHandler.copy(src, dest);
+
+            System.out.println("Screenshot saved: " + filename);
+        } catch (Exception e) {
+            System.err.println("Could not save screenshot: " + e.getMessage());
         }
     }
 

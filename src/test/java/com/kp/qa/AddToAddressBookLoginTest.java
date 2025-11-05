@@ -62,6 +62,7 @@ public class AddToAddressBookLoginTest {
         clickAddToAddressBookWithRetries(driver, SHORT);
 
         System.out.println("Prikazana login forma");
+        Helpers.takeScreenshot(driver , "Test");
         expectLoginForm(driver, SHORT);
     }
 }

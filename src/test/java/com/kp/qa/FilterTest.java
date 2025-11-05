@@ -41,6 +41,7 @@ public class FilterTest {
         int resultCount = submitSearchAndGetResultCount(driver, prevCrumb);
 
         System.out.println("Rezultat pretrage = " + resultCount);
+        Helpers.takeScreenshot(driver,"Test");
         assertTrue(resultCount > 1000, "Očekujem više od 1000 rezultata, dobio sam: " + resultCount);
     }
 }
